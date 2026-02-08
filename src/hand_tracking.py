@@ -1,6 +1,7 @@
 import cv2
 import mediapipe as mp
 
+
 class HandTracker:
     def __init__(self, detection_conf=0.7, tracking_conf=0.7):
         self.mp_hands = mp.solutions.hands
@@ -23,4 +24,5 @@ class HandTracker:
                 landmarks.append((int(lm.x * w), int(lm.y * h)))
 
             return landmarks
+
         return None
